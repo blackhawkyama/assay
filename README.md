@@ -8,6 +8,10 @@ Built to be provider-agnostic at the core, with an [Anthropic](https://docs.clau
 LLM-as-judge. Wrap any system under test — a plain callable, or an external
 script/binary via `SubprocessSystem`.
 
+> **Built with AI assistance.** I designed and directed this project and its
+> architecture; the implementation was written with an AI coding assistant
+> (Claude Code).
+
 ## The spine
 
 ```
