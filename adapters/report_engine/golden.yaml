@@ -1,0 +1,39 @@
+name: inspection
+# Bump the version whenever you add/change a case or its ground truth.
+version: "2026-07-01"
+
+# Each case's `input` is the engine's job spec (what regen_full.py consumes).
+# `expected.required` = defects genuinely flagged in the source (must appear).
+# `expected.forbidden` = known false positives / unmarked boxes (must NOT appear).
+# `expected.risk_score_*` bound the acceptable property_risk_score.
+#
+# This file is a TEMPLATE with one synthetic case. Build the real, runnable
+# golden set locally against your engine's fixtures — a fixture name + hand-
+# verified required/forbidden findings per case — and keep it out of any public
+# checkout (it embeds source-document specifics). The bounds and faithfulness
+# judge scorers work with no labels; coverage/fabrication need the labels.
+
+cases:
+  - id: sample
+    tags: [inspection, checkbox]
+    input:
+      name: sample
+      docs_dir: tests/fixtures/sample     # a real fixture dir in your engine checkout
+      documents:
+        - { file: inspection.pdf, type: inspection }
+      property:
+        name: 123 Example Street
+        property_type: Single Family
+        address:
+          user_input: "123 Example Street, Anytown, CA 90000"
+          street: 123 Example Street
+          city: Anytown
+          state: CA
+          postal_code: "90000"
+          country: USA
+      transaction: {}
+    expected:
+      required: []        # e.g. ["water heater", "GFCI"] — genuinely flagged defects
+      forbidden: []       # e.g. ["framing appears undersized"] — unmarked / false positives
+      risk_score_lo: 0
+      risk_score_hi: 100

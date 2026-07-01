@@ -1,0 +1,6 @@
+{"id": "pos-1", "input": {"text": "Absolutely loved it, best purchase this year!"}, "expected": {"output": "positive"}, "tags": ["short"]}
+{"id": "pos-2", "input": {"text": "Works great and shipped fast. Highly recommend."}, "expected": {"output": "positive"}, "tags": ["short"]}
+{"id": "neg-1", "input": {"text": "Terrible quality, broke after one day. Awful."}, "expected": {"output": "negative"}, "tags": ["short"]}
+{"id": "neg-2", "input": {"text": "Do not buy. Waste of money and support ignored me."}, "expected": {"output": "negative"}, "tags": ["long"]}
+{"id": "neu-1", "input": {"text": "It is a product. It exists. Nothing more to say."}, "expected": {"output": "neutral"}, "tags": ["long"]}
+{"id": "neg-3", "input": {"text": "Not good at all, would not recommend to anyone."}, "expected": {"output": "negative"}, "tags": ["negation"]}

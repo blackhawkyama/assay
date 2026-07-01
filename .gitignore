@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.DS_Store
+
+# Run artifacts — regenerate with `assay run`. Keep a curated baseline out of
+# here manually if you want one under version control.
+runs/
+!runs/.gitkeep
+
+# Never commit secrets.
+.env
