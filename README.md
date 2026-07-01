@@ -5,8 +5,8 @@ a new prompt, a new model, a reworked pipeline. **Did it get better or worse?**
 `assay` answers that with numbers instead of vibes.
 
 Built to be provider-agnostic at the core, with an [Anthropic](https://docs.claude.com)
-LLM-as-judge and an example adapter that grades a real, script-driven
-document→report engine.
+LLM-as-judge. Wrap any system under test — a plain callable, or an external
+script/binary via `SubprocessSystem`.
 
 ## The spine
 
@@ -107,12 +107,11 @@ assay/            core framework
   report.py         format / compare / gate
   cli.py            assay run | show | compare | gate
 examples/         offline toy spec + data
-adapters/report_engine/  example adapter: grade an external report engine
 tests/            pytest suite (judge covered with a fake client)
 ```
 
 ## Status
 
 v0.1 — core spine, deterministic + judge scorers, compare/gate, offline example,
-tested. Next: build the report-engine adapter's golden set from an engine's
-hand-verified fixtures and run it live; then a GitHub Actions gate.
+tested. Next: a GitHub Actions gate, more built-in scorers, and additional
+worked-example adapters.
